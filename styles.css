@@ -388,8 +388,8 @@ body {
 
 .hero-logo {
     position: relative;
-    width: 800px;
-    height: 800px;
+    width: clamp(200px, 50vw, 800px);
+    height: clamp(200px, 50vw, 800px);
     object-fit: contain;
     animation: logoFloat 6s ease-in-out infinite;
     filter: drop-shadow(0 0 50px rgba(124, 58, 237, 0.7));
@@ -995,6 +995,15 @@ section {
 }
 
 @media (max-width: 768px) {
+    /* Navbar mobile */
+    .nav-container {
+        padding: 0 16px;
+    }
+
+    .logo-text {
+        font-size: 1.25rem;
+    }
+
     .nav-links {
         display: none;
         position: absolute;
@@ -1003,9 +1012,15 @@ section {
         right: 0;
         background: rgba(10, 10, 15, 0.98);
         flex-direction: column;
-        padding: 24px;
-        gap: 16px;
+        padding: 20px 16px;
+        gap: 12px;
         border-bottom: 1px solid var(--border-color);
+        gap: 16px;
+    }
+
+    .nav-links a {
+        padding: 12px 0;
+        font-size: 0.9rem;
     }
 
     .nav-links.active {
@@ -1032,43 +1047,570 @@ section {
         display: none;
     }
 
+    /* Hero section mobile */
+    .hero {
+        padding: 100px 16px 60px;
+        min-height: auto;
+    }
+
+    .hero-logo-container {
+        margin-bottom: 24px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.75rem, 5vw, 3.5rem);
+        margin-bottom: 16px;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1rem, 1.8vw, 1.2rem);
+        margin-bottom: 32px;
+    }
+
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 12px;
     }
 
     .hero-buttons .btn {
         width: 100%;
-        max-width: 280px;
+        max-width: 100%;
+        padding: 14px 24px;
+        font-size: 0.95rem;
         justify-content: center;
     }
 
+    .tagline {
+        font-size: 0.95rem;
+    }
+
+    /* Section padding */
+    section {
+        padding: 60px 0;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .section-title {
+        font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    }
+
+    /* Services and grid layouts */
     .services-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service-card {
+        padding: 32px 24px;
+    }
+
+    .card-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 16px;
+    }
+
+    .service-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .service-card p {
+        font-size: 0.95rem;
+        margin-bottom: 16px;
     }
 
     .why-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 
+    .why-card {
+        padding: 24px 20px;
+    }
+
+    .why-card h3 {
+        font-size: 1.1rem;
+    }
+
+    /* Steps */
     .steps-container {
         flex-direction: column;
         align-items: center;
         gap: 32px;
+        padding: 0 16px;
     }
 
     .step {
         max-width: 100%;
+        width: 100%;
+    }
+
+    .step-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        margin-bottom: 18px;
+    }
+
+    .step-content h3 {
+        font-size: 1.15rem;
+    }
+
+    /* CTA */
+    .cta-card {
+        padding: 48px 24px;
+        border-radius: 24px;
+    }
+
+    .cta-card h2 {
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+        margin-bottom: 10px;
+    }
+
+    .cta-card p {
+        font-size: 1rem;
+        margin-bottom: 24px;
+    }
+
+    /* Contact section */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 0 16px;
+    }
+
+    .contact-info {
+        gap: 16px;
+    }
+
+    .contact-card {
+        padding: 20px;
+        gap: 12px;
+    }
+
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contact-card h4 {
+        font-size: 0.85rem;
+    }
+
+    .contact-card a {
+        font-size: 0.95rem;
+    }
+
+    /* Contact Form */
+    .contact-form-container {
+        padding: 32px 24px;
+        border-radius: 20px;
+    }
+
+    .form-group {
+        gap: 6px;
+    }
+
+    .form-group label {
+        font-size: 0.85rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 14px 12px;
+        font-size: 16px; /* Prevents zoom on iOS */
+        border-radius: 10px;
+    }
+
+    .form-group textarea {
+        min-height: 100px;
+    }
+
+    .contact-form {
+        gap: 20px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 48px 0 24px;
+    }
+
+    .container {
+        padding: 0 16px;
     }
 
     .footer-content {
         flex-direction: column;
         text-align: center;
+        gap: 24px;
+        margin-bottom: 32px;
     }
 
     .footer-links {
-        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 12px;
         justify-content: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-logo {
+        font-size: 1.25rem;
+    }
+
+    .footer-social a {
+        width: 36px;
+        height: 36px;
+    }
+
+    .footer-social svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .footer-bottom {
+        padding-top: 24px;
+    }
+
+    .footer-bottom p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Extra small devices (phones) */
+@media (max-width: 480px) {
+    html {
+        scroll-padding-top: 60px;
+    }
+
+    /* Navbar */
+    .navbar {
+        padding: 12px 0;
+    }
+
+    .navbar.scrolled {
+        padding: 10px 0;
+    }
+
+    .nav-container {
+        padding: 0 12px;
+    }
+
+    .logo-text {
+        font-size: 1.1rem;
+    }
+
+    .mobile-menu-btn {
+        padding: 6px;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 80px 12px 40px;
+    }
+
+    .hero-logo-container {
+        margin-bottom: 20px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+        line-height: 1.2;
+        margin-bottom: 12px;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(0.9rem, 1.5vw, 1rem);
+        margin-bottom: 24px;
+    }
+
+    .hero-buttons {
+        gap: 10px;
+    }
+
+    .hero-buttons .btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+        gap: 6px;
+    }
+
+    .btn-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .tagline {
+        font-size: 0.85rem;
+    }
+
+    /* Sections */
+    section {
+        padding: 40px 0;
+    }
+
+    .container {
+        padding: 0 12px;
+    }
+
+    .section-header {
+        margin-bottom: 32px;
+    }
+
+    .section-tag {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
+    .section-title {
+        font-size: clamp(1.25rem, 3vw, 2rem);
+    }
+
+    /* Service cards */
+    .service-card {
+        padding: 24px 16px;
+        border-radius: 20px;
+    }
+
+    .card-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 12px;
+    }
+
+    .service-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+
+    .service-card p {
+        font-size: 0.9rem;
+    }
+
+    .service-features li {
+        font-size: 0.85rem;
+        padding: 4px 0;
+    }
+
+    /* Why cards */
+    .why-card {
+        padding: 20px 16px;
+        border-radius: 16px;
+    }
+
+    .why-icon {
+        font-size: 2.5rem;
+        margin-bottom: 12px;
+    }
+
+    .why-card h3 {
+        font-size: 1rem;
+    }
+
+    .why-card p {
+        font-size: 0.9rem;
+    }
+
+    /* Steps */
+    .steps-container {
+        gap: 24px;
+        padding: 0 12px;
+    }
+
+    .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+        margin-bottom: 14px;
+    }
+
+    .step-content h3 {
+        font-size: 1rem;
+    }
+
+    .step-content p {
+        font-size: 0.9rem;
+    }
+
+    /* CTA */
+    .cta-card {
+        padding: 40px 20px;
+        border-radius: 20px;
+        margin: 0 12px;
+    }
+
+    .cta-card h2 {
+        font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+        margin-bottom: 8px;
+    }
+
+    .cta-card p {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+
+    /* Contact */
+    .contact-grid {
+        padding: 0 12px;
+        gap: 24px;
+    }
+
+    .contact-card {
+        padding: 16px;
+    }
+
+    .contact-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .contact-card h4 {
+        font-size: 0.8rem;
+    }
+
+    .contact-card a {
+        font-size: 0.9rem;
+    }
+
+    .contact-mission {
+        padding: 16px;
+        border-radius: 12px;
+        margin-top: 12px;
+    }
+
+    .contact-mission h4 {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+
+    .contact-mission p {
+        font-size: 0.9rem;
+    }
+
+    /* Form */
+    .contact-form-container {
+        padding: 24px 16px;
+        border-radius: 16px;
+    }
+
+    .contact-form {
+        gap: 16px;
+    }
+
+    .form-group {
+        gap: 6px;
+    }
+
+    .form-group label {
+        font-size: 0.8rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 12px 10px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+
+    .form-group textarea {
+        min-height: 90px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 40px 0 20px;
+    }
+
+    .footer-content {
+        gap: 16px;
+    }
+
+    .footer-logo {
+        font-size: 1.1rem;
+    }
+
+    .footer-brand p {
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        gap: 8px;
+    }
+
+    .footer-links a {
+        font-size: 0.9rem;
+    }
+
+    .footer-social {
+        gap: 10px;
+    }
+
+    .footer-social a {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+    }
+
+    .footer-social svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .footer-bottom {
+        padding-top: 16px;
+    }
+
+    .footer-bottom p {
+        font-size: 0.8rem;
+    }
+
+    /* Reduce animation intensity on mobile for better performance */
+    .shape {
+        animation-duration: 25s;
+        filter: blur(80px);
+        opacity: 0.3;
+    }
+
+    @keyframes float {
+        0%, 100% {
+            transform: translate(0, 0) rotate(0deg) scale(1);
+        }
+        25% {
+            transform: translate(15px, -15px) rotate(90deg) scale(1.05);
+        }
+        50% {
+            transform: translate(-10px, 10px) rotate(180deg) scale(0.95);
+        }
+        75% {
+            transform: translate(10px, 15px) rotate(270deg) scale(1.02);
+        }
+    }
+}
+
+/* Landscape mode adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 60px 16px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        margin-bottom: 12px;
+    }
+
+    .hero-buttons .btn {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+
+    section {
+        padding: 40px 0;
     }
 }
 
