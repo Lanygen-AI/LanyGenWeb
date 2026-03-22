@@ -4,11 +4,11 @@
 
 /* CSS Variables */
 :root {
-    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    --primary-gradient: linear-gradient(135deg, #00d4ff 0%, #7c3aed 50%, #ec4899 100%);
     --neon-blue: #00d4ff;
     --neon-purple: #7c3aed;
     --neon-pink: #ec4899;
-    --neon-green: #10b981;
+    --neon-green: #00d4ff;
     --bg-dark: #0a0a0f;
     --bg-card: rgba(255, 255, 255, 0.03);
     --bg-card-hover: rgba(255, 255, 255, 0.06);
@@ -184,12 +184,24 @@ body {
 }
 
 .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
+    max-width: none;
+    margin: 0;
+    padding: 0 24px 0 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.navbar .nav-logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
 }
 
 .logo-text {
@@ -997,7 +1009,11 @@ section {
 @media (max-width: 768px) {
     /* Navbar mobile */
     .nav-container {
-        padding: 0 16px;
+        padding: 0 16px 0 0;
+    }
+
+    .navbar .nav-logo {
+        height: 31px;
     }
 
     .logo-text {
@@ -1299,7 +1315,7 @@ section {
     }
 
     .nav-container {
-        padding: 0 12px;
+        padding: 0 12px 0 0;
     }
 
     .logo-text {
